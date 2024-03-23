@@ -6,9 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/mmkmou/jenkins-k8s.git
-    targetRevision: HEAD
+    repoURL: 'https://github.com/mmkmou/jenkins-k8s.git'
     path: develop
+    targetRevision: HEAD
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: develop
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
