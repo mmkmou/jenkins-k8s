@@ -15,10 +15,8 @@ spec:
         app: transactions
     spec:
       containers:
-      - image: mmkmou/transactions
+      - image: mmkmou/transactions:release-125
         name: transactions
         envFrom:
         - configMapRef:
             name: datasource
-        
-        
